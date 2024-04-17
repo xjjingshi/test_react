@@ -8,7 +8,6 @@ const root = ReactDOM.createRoot(
 const App = () => {
 
     return <div> hello world</div>
-
 }
 
 
