@@ -11,24 +11,25 @@ jobs:
     steps:
       # 1 下载代码
       - uses: actions/checkout@v3
- 
 
-      - name: install dependencies
-      run: npm install
+      # 安装依赖
+      - name: 安装依赖
+        run: npm install
 
-      - name: build packages
-      run: npm build
+      # 打包
+      - name: 开始打包
+        run: npm build
 
-      - name: to nginx
-      uses: easingthemes/ssh-deploy@v5.0.3
-      with:
-        # 登陆ssh时候的 sshkey
-        SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-        # Remote host
-        REMOTE_HOST: ${{ secrets.HOST }}
-        # Remote user
-        REMOTE_USER: ${{ secrets.USERNAME }
-        # Remote port
-        #一般是dist
-        SOURCE: ./test 
-        TARGET: /usr/local/nginx/html
+      # ssh
+      - name: 部署到服务器
+        uses: easingthemes/ssh-deploy@v4.1.8
+        with:
+          # 登陆ssh时候的 sshkey
+          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          # Remote host
+          REMOTE_HOST: ${{ secrets.HOST }}
+          # Remote user
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          # Remote port
+          SOURCE: ./blog #一般是dist
+          TARGET: /usr/local/nginx/html # 这里是项目存放在服务器的哪个文件下
