@@ -10,17 +10,16 @@ jobs:
     runs-on: ubuntu-latast
   
   steps:
-    name: checkout
-    uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
-    name: install dependencies
+    - name: install dependencies
     run: npm install
 
-    name: build packages
+    - name: build packages
     run: npm run build
 
-    name: to nginx
-    - uses: easingthemes/ssh-deploy@v5.0.3
+    - name: to nginx
+    uses: easingthemes/ssh-deploy@v5.0.3
     with:
       # 登陆ssh时候的 sshkey
       SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
