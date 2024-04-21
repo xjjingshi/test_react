@@ -15,6 +15,7 @@ const App = () => {
       const {count} = store.getState().addSubReducer
       console.log(count,'count')
       setMyCount(count)
+      
     })
     return ()=> {
       unsubscribe()
