@@ -17,7 +17,7 @@ jobs:
       run: npm install
 
       - name: build packages
-      run: npm run build
+      run: npm build
 
       - name: to nginx
       uses: easingthemes/ssh-deploy@v5.0.3
