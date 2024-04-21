@@ -31,5 +31,5 @@ jobs:
           # Remote user
           REMOTE_USER: ${{ secrets.USERNAME }}
           # Remote port
-          SOURCE: ./blog #一般是dist
+          SOURCE: ./test #一般是dist
           TARGET: /usr/local/nginx/html # 这里是项目存放在服务器的哪个文件下
