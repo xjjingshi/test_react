@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack/webpack.config.dev.js --open",
-    "build": "rimraf --glob build/* && webpack --config ./webpack/webpack.config.js"
+    "build": "rimraf --glob test/* && webpack --config ./webpack/webpack.config.js"
   },
   "author": "jingshi",
   "license": "ISC",
