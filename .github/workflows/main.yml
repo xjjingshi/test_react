@@ -10,16 +10,17 @@ jobs:
     runs-on: ubuntu-latast
   
   steps:
+    
     uses: actions/checkout@v3
 
 
-    -name: install dependencies
+    name: install dependencies
     run: npm install
 
-    -name: build packages
+    name: build packages
     run: npm run build
 
-    -name: to nginx
+    name: to nginx
     uses: easingthemes/ssh-deploy@v5.0.3
     with:
       # 登陆ssh时候的 sshkey
@@ -29,7 +30,8 @@ jobs:
       # Remote user
       REMOTE_USER: ${{ secrets.USERNAME }
       # Remote port
-      SOURCE: ./test #一般是dist
+      #一般是dist
+      SOURCE: ./test 
       TARGET: /usr/local/nginx/html
 
 
