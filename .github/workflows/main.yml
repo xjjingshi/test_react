@@ -21,7 +21,7 @@ jobs:
     run: npm run build
 
     name: to nginx
-    uses: easingthemes/ssh-deploy@v5.0.3
+    - uses: easingthemes/ssh-deploy@v5.0.3
     with:
       # 登陆ssh时候的 sshkey
       SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
