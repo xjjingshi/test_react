@@ -1,0 +1,36 @@
+name: test_react
+
+on:
+  push:
+    branches: ['master']
+  workflow_dispatch:
+
+jobs:
+  build: 
+    runs-on: ubuntu-latast
+  
+  steps:
+    uses: actions/checkout@v3
+
+
+    -name: install dependencies
+    run: npm install
+
+    -name: build packages
+    run: npm run build
+
+    -name: to nginx
+    uses: easingthemes/ssh-deploy@v5.0.3
+    with:
+      # 登陆ssh时候的 sshkey
+      SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+      # Remote host
+      REMOTE_HOST: ${{ secrets.HOST }}
+      # Remote user
+      REMOTE_USER: ${{ secrets.USERNAME }
+      # Remote port
+      SOURCE: ./test #一般是dist
+      TARGET: /usr/local/nginx/html
+
+
+
