@@ -10,9 +10,7 @@ jobs:
     runs-on: ubuntu-latast
   
   steps:
-    
     uses: actions/checkout@v3
-
 
     name: install dependencies
     run: npm install
