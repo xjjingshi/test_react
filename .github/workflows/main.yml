@@ -18,11 +18,11 @@ jobs:
 
       # 打包
       - name: 开始打包
-        run: npm build
+        run: npm run build
 
       # ssh
       - name: 部署到服务器
-        uses: easingthemes/ssh-deploy@v4.1.8
+        uses: easingthemes/ssh-deploy@v5.0.3
         with:
           # 登陆ssh时候的 sshkey
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
