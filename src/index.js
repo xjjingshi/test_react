@@ -16,6 +16,7 @@ const App = () => {
 
       console.log(count,'count')
       setMyCount(count)
+      
     })
     return ()=> {
       unsubscribe()
