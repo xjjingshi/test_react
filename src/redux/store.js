@@ -4,7 +4,9 @@ import combineReducers from './reducers'
 const store = createStore(combineReducers)
 
 store.subscribe(()=> {
+
     console.log(store.getState())
+    
 })
 
 
