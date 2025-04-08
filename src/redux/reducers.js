@@ -20,7 +20,9 @@ const addSubReducer = (state = initState, action) => {
 
 }
 const subReducer = (state = initState, action) => {
+
     return state
+    
 }
 
 export default combineReducers({addSubReducer,subReducer})
