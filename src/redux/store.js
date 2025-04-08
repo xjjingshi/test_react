@@ -5,7 +5,6 @@ const store = createStore(combineReducers)
 
 store.subscribe(()=> {
     console.log(store.getState())
-    
 })
 
 
